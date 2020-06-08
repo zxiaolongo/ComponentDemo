@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/mCollapsingToolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@mipmap/e_manager_activity_img_4"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="1.0" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+        <!--        <TextView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:minHeight="30dp"-->
+        <!--            android:gravity="center"-->
+        <!--            android:textSize="40sp"-->
+        <!--            android:padding="20dp"-->
+        <!--            app:layout_scrollFlags="scroll|exitUntilCollapsed"-->
+        <!--            android:text="标题"/>-->
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="15dp"
+        android:src="@mipmap/ic_launcher" />
+    <!--    app:behavior_overlapTop="80dp"-->
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    <!--layout_anchor iv 才起作用-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_anchor="@id/iv"
+        app:layout_behavior=".TranslucentBehaviorTextView"
+        android:text="@string/app_name"
+        android:gravity="center" />
+<!--    <android.support.v7.widget.Toolbar-->
+<!--        android:id="@+id/tl"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_anchor="@id/iv"-->
+<!--        app:layout_behavior=".TranslucentBehavior"-->
+<!--        app:navigationIcon="@mipmap/e_manage_completed_diamonds" />-->
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:elevation="5dp"
+        android:src="@mipmap/e_manage_completed_diamonds"
+        app:layout_anchor="@id/iv"
+        app:layout_behavior=".TransferHeaderBehavior" />
+</android.support.design.widget.CoordinatorLayout>

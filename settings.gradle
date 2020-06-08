@@ -1,0 +1,3 @@
+rootProject.name='ComponentDemo'
+include ':app'
+include ':coordinatorlayoutdemo'
